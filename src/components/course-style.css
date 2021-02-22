@@ -36,3 +36,23 @@
 .nav-item.plus-1{
     margin: 10px;
 }
+
+.my-controls-at-top-right-check{
+    position: absolute;
+    top: 15px;
+    right: 30px;
+}
+
+.my-controls-at-top-right-times{
+    position: absolute;
+    top: 15px;
+    right: 15px;
+}
+
+.ys-location{
+    float: right;
+}
+
+.card{
+    margin: 10px;
+}

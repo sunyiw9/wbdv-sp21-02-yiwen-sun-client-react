@@ -36,8 +36,11 @@ export default class CourseTable
                     <tr>
                         <th>Title</th>
                         <th>Owned by</th>
-                        <th>Last Modified</th>
+                        <th>Last Modified
+                        </th>
                         <th>
+                            <i className="fas fa-folder"></i>
+                            <i className="fas fa-sort-alpha-up-alt"></i>
                             <Link to="/courses/grid">
                             <i className="fas fa-th"></i>
                             </Link>

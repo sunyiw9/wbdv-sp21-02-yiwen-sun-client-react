@@ -42,8 +42,8 @@ class CourseManager extends React.Component {
     addCourse = () => {
         const newCourse = {
             title: "New Course",
-            owner: "New Owner",
-            lastModified: "Never"
+            owner: "me",
+            lastModified: "01/01/2021"
         }
         courseService.createCourse(newCourse)
             .then(course => this.setState(
@@ -108,7 +108,7 @@ class CourseManager extends React.Component {
                             <i className="fas fa-bars fa-2x"></i>
                             </Link>
                         </div>
-                        <div className="col-2">
+                        <div className="col-2 d-none d-lg-block">
                             <h4>Course Manager</h4>
                         </div>
                         <div className="col-8">
