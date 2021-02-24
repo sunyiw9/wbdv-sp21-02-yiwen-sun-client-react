@@ -5,7 +5,7 @@ import './course-style.css';
 // const CourseEditor = ({props}) =>
 const CourseEditor = ({history}) =>
     <div>
-        <div className="container-fluid">
+
         <h2>
             <Link to="/courses/table">
                 <i className="fas fa-arrow-left"></i>
@@ -109,7 +109,7 @@ const CourseEditor = ({history}) =>
                         Content intentionally left blank
                 </div>
             </div>
-    </div>
+
     </div>
 
 export default CourseEditor

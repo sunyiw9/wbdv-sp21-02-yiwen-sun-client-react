@@ -24,7 +24,9 @@ const CourseCard = (
     return (<div className="col-xs-12 col-sm-6 col-md-4 col-lg-3 col-xl-2">
         <div className="card">
             {editing && <i onClick={() => saveTitle()} className="fas fa-check my-controls-at-top-right-check"></i>}
-            {editing && <i onClick={() => deleteCourse(course)} className="fas fa-times my-controls-at-top-right-times"></i>}
+            {editing && <i onClick={() =>
+            {deleteCourse(course)
+                setEditing(false)}} className="fas fa-times my-controls-at-top-right-times"></i>}
             <img src="https://www.valuecoders.com/blog/wp-content/uploads/2016/08/react.png" className="card-img-top"
                  alt="..."/>
             <div className="card-body">
@@ -36,7 +38,7 @@ const CourseCard = (
                     className="form-control"/>
                     // <h5 className="card-title">{course.title}</h5>
                 }
-                <p className="card-text">Some quick example text to build on the card title and make up the bulk of the
+                <p className="card-text"><p>{course.title}</p>Some quick example text to build on the card title and make up the bulk of the
                     card's
                     content.</p>
                 <img src={``}/>
