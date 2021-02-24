@@ -9,8 +9,6 @@ import './course-style.css';
 class CourseManager extends React.Component {
     state = {
         courses: [],
-        qwe: 123,
-        sdf: 456
     }
 
     updateCourse = (course) => {
@@ -133,6 +131,7 @@ class CourseManager extends React.Component {
                 </Route>
                 <Route path="/courses/grid">
                     <CourseGrid
+                        updateCourse={this.updateCourse}
                         deleteCourse={this.deleteCourse}
                         courses={this.state.courses}/>
                 </Route>
@@ -142,6 +141,7 @@ class CourseManager extends React.Component {
                 {/*<Route path="/courses/editor"*/}
                 {/*       render={(props) => <CourseEditor props={props}/>}>*/}
                 {/*</Route>*/}
+
                 <Route path="/courses/editor"
                        render={(props) => <CourseEditor {...props}/>}>
                 </Route>

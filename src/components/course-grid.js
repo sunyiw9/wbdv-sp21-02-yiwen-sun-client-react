@@ -3,8 +3,15 @@ import CourseCard from "./course-card";
 import {Link} from "react-router-dom";
 import './course-style.css';
 
-const CourseGrid = ({courses}) =>
-    <div>
+const CourseGrid = (
+    {
+        courses,
+        updateCourse,
+        deleteCourse,
+        title,
+    }) => {
+    return (
+        <div>
         <div className="container-fluid">
             <div className="row">
 
@@ -21,23 +28,30 @@ const CourseGrid = ({courses}) =>
                     <i className="fas fa-sort-alpha-up-alt fa-2x ys-sort float-right"></i>
                 </div>
                 <div className="col">
-                <Link to="/courses/table">
+                    <Link to="/courses/table">
                         <i className="fas fa-list fa-2x float-right"></i>
-                </Link>
+                    </Link>
                 </div>
 
-                </div>
+            </div>
             {/*<h2>Course Grid {courses.length}</h2>*/}
 
             <div className="row">
                 {
-                    courses.map(course =>
-                        <CourseCard course={course}/>
+                    courses.map((course, ndx) =>
+                        <CourseCard
+                            course={course}
+                            updateCourse={updateCourse}
+                            deleteCourse={deleteCourse}
+                            key={ndx}
+                            title={title}
+                        />
                     )
                 }
             </div>
 
         </div>
-    </div>
-
+        </div>
+    )
+}
 export default CourseGrid
