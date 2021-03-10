@@ -21,8 +21,8 @@ const LessonTabs = (
     }, [moduleId])
     return(
         <div>
-            <h2>Lessons</h2>
-            <ul className="nav nav-pills">
+
+            <ul className="nav nav-tabs">
                 {
                     lessons.map(lesson =>
                         <li className="nav-item">
