@@ -1,8 +1,8 @@
 import React, {useEffect} from 'react'
 import {connect} from "react-redux";
-import EditableItem from "./editable-item";
+import EditableItem from "../editable-item";
 import {useParams} from "react-router-dom";
-import lessonService from '../services/lesson-service'
+import lessonService from '../../services/lesson-service'
 
 const LessonTabs = (
     {
@@ -12,7 +12,7 @@ const LessonTabs = (
         deleteLesson,
         updateLesson
     }) => {
-    const {courseId, moduleId, lessonId} = useParams();
+    const {courseId, moduleId, lessonId, layout} = useParams();
     useEffect(() => {
         console.log("LOAD LESSONS FOR MODULE: " + moduleId)
         if(moduleId !== "undefined" && typeof moduleId !== "undefined") {
@@ -28,7 +28,7 @@ const LessonTabs = (
                         <li className="nav-item">
                             <EditableItem
                                 active={lesson._id === lessonId}
-                                to={`/courses/editor/${courseId}/${moduleId}/${lesson._id}`}
+                                to={`/courses/${layout}/edit/${courseId}/modules/${moduleId}/lessons/${lesson._id}`}
                                 updateItem={updateLesson}
                                 deleteItem={deleteLesson}
                                 item={lesson}/>

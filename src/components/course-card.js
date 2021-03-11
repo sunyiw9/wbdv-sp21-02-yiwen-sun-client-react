@@ -44,7 +44,7 @@ const CourseCard = (
                 <img src={``}/>
                 {
                     !editing &&
-                    <Link to="/courses/editor" className="btn btn-primary">
+                    <Link to={`/courses/:layout/edit/${course._id}`} className="btn btn-primary">
                         {course.title}
                     </Link>
                 }
