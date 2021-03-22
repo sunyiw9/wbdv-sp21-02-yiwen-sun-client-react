@@ -14,7 +14,7 @@ const HeadingWidget = (
             {
                 !editing &&
                     <>
-                        {widget.type === "PARAGRAPH" && <ParagraphWidget widget={widget}/>}
+
                         {(widget.size === 1 || widget.size === "1") && <h1>{widget.text}</h1>}
                         {(widget.size === 2 || widget.size === "2") && <h2>{widget.text}</h2>}
                         {(widget.size === 3 || widget.size === "3") && <h3>{widget.text}</h3>}

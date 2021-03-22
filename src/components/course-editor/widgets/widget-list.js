@@ -68,7 +68,7 @@ const WidgetList = (
         <div>
             <i onClick={() => createWidgetForTopic(topicId)} className="fas fa-plus fa-2x float-right"></i>
 
-            <h2>Widget List ({widgets.length}) {editingWidget.id}</h2>
+            <h2>Widget List</h2>
             <ul className="list-group">
                 {
                     widgets.map(widget =>
@@ -117,7 +117,7 @@ const WidgetList = (
                     )
                 }
             </ul>
-            {JSON.stringify(widgets)}
+
         </div>
     )
 }
