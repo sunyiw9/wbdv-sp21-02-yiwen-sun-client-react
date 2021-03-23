@@ -1,6 +1,8 @@
+const WIDGET_URL = process.env.REACT_APP_WIDGET_URL
+
 export const createWidgetForTopic = (topicId, widget) => {
     // TODO: move server communication to widget-service.js
-    return fetch(`http://localhost:8080/api/topics/${topicId}/widgets`, {
+    return fetch(`${WIDGET_URL}/topics/${topicId}/widgets`, {
         method: "POST",
         body: JSON.stringify(widget),
         headers: {
@@ -11,13 +13,13 @@ export const createWidgetForTopic = (topicId, widget) => {
 }
 
 export const deleteWidget = (wid) => {
-    return fetch(`http://localhost:8080/api/widgets/${wid}`, {
+    return fetch(`${WIDGET_URL}/widgets/${wid}`, {
         method: "DELETE",
     }).then(response => response.json())
 }
 
 export const updateWidget = (wid, widget) => {
-    return fetch(`http://localhost:8080/api/widgets/${wid}`, {
+    return fetch(`${WIDGET_URL}/widgets/${wid}`, {
         method: "PUT",
         body: JSON.stringify(widget),
         headers: {
@@ -27,12 +29,12 @@ export const updateWidget = (wid, widget) => {
 }
 
 export const findWidgetsForTopic = (topicId) => {
-    return fetch(`http://localhost:8080/api/topics/${topicId}/widgets`)
+    return fetch(`${WIDGET_URL}/topics/${topicId}/widgets`)
         .then(response => response.json())
 }
 
 export const findAllWidgets =() =>{
-    return fetch(`http://localhost:8080/api/widgets`)
+    return fetch(`${WIDGET_URL}/widgets`)
         .then(response => response.json())
 }
 
