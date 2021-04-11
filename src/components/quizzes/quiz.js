@@ -7,6 +7,17 @@ const Quiz = () => {
     const {quizId} = useParams()
     const [questions, setQuestions] = useState([])
     useEffect(() => {
+        findQuestionsForQuiz()
+    }, [])
+    const findQuestionsForQuiz = () =>{
+        questionService.findQuestionsForQuiz(quizId)
+            .then((data) => {
+                setQuestions(data)
+            })
+    }
+
+    /*
+    useEffect(() => {
 
         fetch(`http://localhost:4000/api/quizzes/${quizId}/questions`)
             .then(response => response.json())
@@ -14,6 +25,8 @@ const Quiz = () => {
                 setQuestions(questions)
             })
     }, [])
+
+     */
 
     return(
         <div>

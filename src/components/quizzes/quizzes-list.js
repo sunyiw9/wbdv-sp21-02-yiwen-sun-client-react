@@ -3,8 +3,21 @@ import {Link, useParams} from "react-router-dom";
 import quizService from "../../services/quiz-service"
 
 const QuizzesList = () => {
-    const {courseId} = useParams()
+    const {courseId, quizId} = useParams()
     const [quizzes, setQuizzes] = useState([])
+
+    useEffect(() => {
+        findAllQuizzes()
+    }, [])
+
+    const findAllQuizzes = () => {
+        quizService.findAllQuizzes()
+            .then((data) => {
+                setQuizzes(data)
+            })
+    }
+
+    /*
     useEffect(() => {
 
         fetch("http://localhost:4000/api/quizzes")
@@ -13,6 +26,8 @@ const QuizzesList = () => {
                 setQuizzes(quizzes)
             })
     }, [])
+
+     */
 
 
     return(
