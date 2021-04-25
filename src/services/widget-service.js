@@ -1,4 +1,4 @@
-const WIDGET_URL = process.env.REACT_APP_WIDGET_URL
+const WIDGET_URL = 'https://cs5610-sp02-yiwen-sun.herokuapp.com/api'
 
 export const createWidgetForTopic = (topicId, widget) => {
     // TODO: move server communication to widget-service.js
